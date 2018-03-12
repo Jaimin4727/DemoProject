@@ -1,4 +1,4 @@
-# NodeJS API demo with postgresql database
+# NodeJS API with postgresql database
 
 # postgresql database
 

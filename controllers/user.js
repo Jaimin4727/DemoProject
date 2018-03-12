@@ -3,6 +3,8 @@ var router = express.Router();
 var User = models.tblusers;
 //End of Tables
 
+
+// Get User List
 router.get('/GetAllUsers', function (req, res) {
     User.findAll().then(function (response) {
         res.json({ success: true, message: "Record found...", data: response });
@@ -11,6 +13,7 @@ router.get('/GetAllUsers', function (req, res) {
     })
 });
 
+// Create New User 
 router.post('/CreateUser', jsonParser, function (req, res) {
     objUser = req.body;
     if (objUser.id == '') {
@@ -42,6 +45,8 @@ router.post('/CreateUser', jsonParser, function (req, res) {
     }
 });
 
+
+// Delete User by Id
 router.get('/DeleteUser', function (req, res) {
     User.destroy({ where: { id: req.query.id } }).then(function (response) {
         if (response) {

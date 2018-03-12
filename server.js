@@ -43,8 +43,6 @@ app.use(express.static(__dirname + '/'));
 
 var port = process.env.PORT || 3000;
 
-var user = models.tblusers;
-
 app.use('/user', require('./controllers/user'));
 
 server.listen(port, function () {
